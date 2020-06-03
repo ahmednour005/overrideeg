@@ -1,0 +1,27 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 ">
+                <div class="list-group category sticky-top">
+                    <a  routerLinkActive="active"  routerLink="/panel/posts/all" class="list-group-item list-group-item-action">
+                      All Posts
+                    </a>
+                    <a  routerLinkActive="active"  routerLink="/panel/posts/control" class="list-group-item list-group-item-action">
+                      Posts Control
+                      </a>
+                      <a  routerLinkActive="active"  routerLink="/panel/comments/all" class="list-group-item list-group-item-action">
+                        All Comments
+                      </a>
+                      <a  routerLinkActive="active"  routerLink="/panel/comments/control" class="list-group-item list-group-item-action">
+                        Comments Control
+                      </a>
+                   
+                </div>
+            </div>
+            <div class="col-md-9">
+               
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</section>

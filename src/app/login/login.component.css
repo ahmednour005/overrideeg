@@ -1,0 +1,78 @@
+
+    .card{
+    margin-top:80px;
+    margin-bottom: 20px;
+    width: 450px;
+    background-color: #FFF;
+    border: none;
+    color:#333;
+    }
+    
+    .social_icon span{
+    font-size: 60px;
+    margin-left: 10px;
+    color: #794bc4;
+    }
+    
+    .social_icon span:hover{
+    cursor: pointer;
+    }
+    
+    .social_icon{
+    position: absolute;
+    right: 20px;
+    top: -45px;
+    }
+    
+    .input-group-prepend span{
+    width: 40px;
+    background-image: linear-gradient(to top, #cc208e 0%, #6713d2 100%);
+    color: #FFF;
+    border:1px solid #794bc4 !important;
+    }
+    
+    input{
+        height: 45px;
+    }
+    input.ng-invalid.ng-touched{
+        border:1px solid red;
+    }
+    input:focus{
+    outline: 0 0 0 0  !important;
+    box-shadow: 0 0 0 0 !important;
+    
+    }
+   
+    .login_btn{
+    color: #FFFF;
+    background-image: linear-gradient(to top, #cc208e 0%, #6713d2 100%);
+    width: 100px;
+    }
+    
+    .login_btn:hover{
+    color: black;
+    background-image: none;
+    border:1px solid #794bc4;
+    
+    }
+    .login_btn:disabled{
+        background-color:#794bc4;
+        cursor: no-drop;
+    }
+    .links a{
+    margin-left: 10px;
+    color:#007be3;
+    cursor: pointer;
+    }
+    .card-header{
+    background-color: #FFF !important;
+    }
+    .card-footer{
+        background-color: #FFF !important;
+    }
+
+    p{
+        text-align: center;
+        font-weight: 500;
+        font-size: 16px;
+    }

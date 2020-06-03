@@ -1,0 +1,14 @@
+.bg-light{
+    background-color: #FFF !important;
+    box-shadow: 0px 0px 11px rgba(0,0,0,0.1);
+}
+.navbar-light .navbar-brand{
+    color: #794bc4;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+.fa-power-off{
+    color: #794bc4;
+}
+

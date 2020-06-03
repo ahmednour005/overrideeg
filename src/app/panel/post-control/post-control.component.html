@@ -1,0 +1,38 @@
+<div class="container postsComponent">
+    <div class="row">
+        <div class="col-md-12 sticky-top" >
+            <div class="addpost " >
+                <form (ngSubmit)="createPost(f)" #f="ngForm">
+                    <div class="form-group">
+                        <label for="Title">Title</label>
+                        <input type="text" #title="ngModel" ngModel name="title" class="form-control" required>
+                    </div>
+                    <div *ngIf="title.invalid && title.touched" class="alert alert-danger" >
+                        <p *ngIf="title.errors?.required"> title Is Required</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="Bitle">Body</label>
+                        <textarea type="body" #body="ngModel" ngModel name="body" class="form-control" required></textarea>
+                    </div>
+                    <div *ngIf="body.invalid && body.touched" class="alert alert-danger" >
+                        <p *ngIf="body.errors?.required"> body Is Required</p>
+                    </div>
+                    <button type="submit"  [disabled]="f.invalid" class="btn btn-primary ">{{editmode ? 'Add Post ' : 'Update'}} </button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-12" *ngFor="let post of posts">
+            <div class="item">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{post.title}}</h5>
+                        <p class="card-text">{{post.body}}</p>
+                    </div>
+                    <div class="footer">
+                        <button class="btn btn-primary" (click)="updatePost(post)">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

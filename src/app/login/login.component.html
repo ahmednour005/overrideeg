@@ -1,0 +1,114 @@
+
+<div class="container" *ngIf="loginMode"> 
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h3>Sign In</h3>
+			</div>
+			<div class="card-body">
+				<form (ngSubmit)="login(log)" #log="ngForm">
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fa fa-user"></i></span>
+						</div>
+						<input type="text" name="email" class="form-control" placeholder="Email"
+						ngModel #email="ngModel" required email>
+					</div>
+					<p *ngIf="email.touched && email.errors?.required">Email Is Required</p>
+					<p *ngIf="email.touched &&  email.errors?.email">Wrong Email Format</p>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fa fa-key"></i></span>
+						</div>
+						<input type="password" name="password" class="form-control" placeholder="password"
+						ngModel #password="ngModel" required>
+					</div>
+					<p *ngIf="password.touched && password.errors?.required">Password Is Required </p>
+					
+					<div class="form-group">
+						<input type="submit" value="Login" [disabled]="log.invalid" class="btn float-right login_btn">
+					</div>
+					<p *ngIf="loginErrorMessage">{{loginErrorMessage}}</p>
+				</form>
+			</div>
+			
+			<div class="card-footer">
+				<div class="d-flex justify-content-center links">
+					Don't have an account? <a (click)="Relogin()">Sign Up</a>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<p>Admin: ahmednour001@gmail.com & password : 123123</p>
+</div>
+
+
+ <div class="container" *ngIf="signUpMode">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card ">
+			<div class="card-header">
+				<h3>Sign Up</h3>
+			</div>
+			<div class="card-body">
+				<form (ngSubmit)="signup(f)" #f="ngForm">
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fa fa-user"></i></span>
+						</div>
+						<input type="text" name="username" class="form-control" placeholder="UserName"
+						 ngModel  #username="ngModel" required minlength="10" pattern="^[a-zA-Z0-9\_]+">
+						
+					</div>
+					<div *ngIf="username.invalid && username.touched">
+						<p *ngIf="username.errors?.minlength">  min Length 10 Your Enter {{username.errors.minlength.actualLength}}</p>
+						<p *ngIf="username.errors?.required">UserName Is Required </p>
+						<p *ngIf="username.errors?.pattern"> UserName Format Required </p>
+					</div>
+					
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fa fa-envelope"></i></span>
+						</div>
+
+						<input type="email"  name="email" class="form-control" placeholder="Email"
+						 ngModel #email="ngModel" required email>
+					</div>
+					<p *ngIf="email.touched && email.errors?.required">Email Is Required</p>
+					<p *ngIf="email.touched &&  email.errors?.email">Wrong Email Format</p>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fa fa-key"></i></span>
+						</div>
+						<input type="password" name="password" class="form-control" placeholder="password"
+						ngModel #password="ngModel" required minlength="6">
+					</div>
+					<p *ngIf="password.touched && password.errors?.required">Password Is Required </p>
+					<p *ngIf="password.touched && password.errors?.minlength">Password Should Be Length 6+  </p>
+                    <div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fa fa-key"></i></span>
+						</div>
+						<input type="password" name="passwordConfirm" class="form-control" placeholder="Confirm Password"
+						ngModel #passwordConfirm="ngModel" required minlength="6">
+					</div>
+					<p *ngIf="passwordConfirm.touched && passwordConfirm.errors?.required">Confirm Password Is Required</p>
+					<p *ngIf="passwordConfirm.touched && passwordConfirm.value !== password.value ">Passwords Are Not Equal</p>
+				
+					<div class="form-group">
+						<input type="submit" value="Sign Up"
+						 [disabled]="f.invalid || passwordConfirm.value !== password.value " 
+						 class="btn float-right login_btn">
+					</div>
+					<p *ngIf="signErrorMessage">{{signErrorMessage}}</p>
+				</form>
+			</div>
+			<div class="card-footer">
+				<div class="d-flex justify-content-center links">
+					Do have an account? <a (click)="ReSignUp()">Sign In</a>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>

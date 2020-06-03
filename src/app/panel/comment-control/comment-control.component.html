@@ -1,0 +1,38 @@
+<div class="container postsComponent">
+    <div class="row">
+        <div class="col-md-12 sticky-top" >
+            <div class="addpost " >
+                <form (ngSubmit)="createComment(commentForm)" #commentForm="ngForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" #name="ngModel" ngModel name="name" class="form-control" required>
+                    </div>
+                    <div *ngIf="name.invalid && name.touched" class="alert alert-danger" >
+                        <p *ngIf="name.errors?.required"> name Is Required</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="Bitle">Body</label>
+                        <textarea type="body" #body="ngModel" ngModel name="body" class="form-control" required></textarea>
+                    </div>
+                    <div *ngIf="body.invalid && body.touched" class="alert alert-danger" >
+                        <p *ngIf="body.errors?.required"> body Is Required</p>
+                    </div>
+                    <button type="submit" [disabled]="commentForm.invalid" class="btn btn-primary">{{editmode ? 'Add ' : 'Update'}} </button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-12" *ngFor="let comment of comments">
+            <div class="item">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{comment.name}}</h5>
+                        <p class="card-text">{{comment.body}}</p>
+                    </div>
+                    <div class="footer">
+                        <button class="btn btn-primary" (click)="updateComment(comment)">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

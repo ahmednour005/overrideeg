@@ -1,0 +1,18 @@
+<div class="container postsComponent">
+    <div class="row">
+        <div class="col-md-12" *ngFor="let comment of comments">
+            <div class="item">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{comment.name}}</h5>
+                        <p class="card-text">{{comment.body}}</p>
+                    </div>
+                    <div class="footer">
+                        <button class="btn btn-primary" (click)="viewComment(comment)">View</button>
+                        <button class="btn btn-danger" (click)="delete(comment)">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

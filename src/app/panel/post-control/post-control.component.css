@@ -1,0 +1,54 @@
+
+.postsComponent{
+    margin-top: 10px;
+}
+.card:hover{
+    background-color: #f5f8fa;
+}
+
+.footer{
+    padding: 0 15px 15px 0;
+    text-align: right;
+}
+.footer button{
+margin-right: 8px;
+}
+.card{
+    margin-top: 5px;
+}
+.sticky-top {
+    top: 57px;
+    z-index: 1;
+}
+.addpost{
+    background: #FFF;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.btn-primary{
+    color: #FFFF;
+    background-image: linear-gradient(to top, #cc208e 0%, #6713d2 100%);
+    width: 100px;
+    border:1px solid #794bc4;
+}
+input{
+    
+    margin-bottom: -10px;
+}
+
+.btn-primary:hover{
+    color: black;
+    background-image: none;
+    background-color: transparent !important;
+    border:1px solid #794bc4;
+}
+
+.btn-primary:disabled{
+    background-image: linear-gradient(to top, #cc208e 0%, #6713d2 100%);
+    cursor: no-drop;
+    color:#FFF;
+}
+
+.alert{
+    padding: 10px 0px 0px 15px;
+}
